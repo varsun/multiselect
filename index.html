@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Multiselect Plugin</title>
+<script type="text/javascript" src="js/jquery.1.10.2.min.js"></script>
+<script type="text/javascript" src="js/multiselect.1.0.js"></script>
+<link rel="stylesheet" type="text/css" href="css/multiselect.1.0.css" />
+<style type="text/css">
+#btn_get, #btn_set, #btn_get1, #btn_set1 {
+	border:1px solid #b7b7b7;
+	border-radius: 5px;
+	text-decoration:none;
+	padding: 3px;
+}
+#btn_get:hover, #btn_set:hover, #btn_get1:hover, #btn_set1:hover {
+	border:1px solid #a0a0a0;
+}
+</style>
+</head>
+
+<body>
+<div id="main2">
+	<a href="#" data-id="1">1</a>
+	<a href="#" data-id="2">2</a>
+	<a href="#" data-id="3">3</a>
+	<a href="#" data-id="4">4</a>
+	<a href="#" data-id="5">5</a>
+</div>
+
+<div id="main1">
+	<a href="#" data-id="1">1</a>
+	<a href="#" data-id="2">2</a>
+	<a href="#" data-id="3">3</a>
+	<a href="#" data-id="4">4</a>
+	<a href="#" data-id="5">5</a>
+</div>
+
+<a href="#" id="btn_get1">Get</a>
+<a href="#" id="btn_set1">Set</a>
+
+<div id="main">
+	<a href="#" data-id="1">1</a>
+	<a href="#" data-id="2">2</a>
+	<a href="#" data-id="3">3</a>
+	<a href="#" data-id="4">4</a>
+	<a href="#" data-id="5">5</a>
+</div>
+
+<a href="#" id="btn_get">Get</a>
+<a href="#" id="btn_set">Set</a>
+
+<div id="sub">
+	<a href="#" data-id="1" data-parent="1">1-A</a>
+	<a href="#" data-id="2" data-parent="1">1-B</a>
+	<a href="#" data-id="3" data-parent="1">1-C</a>
+	<a href="#" data-id="4" data-parent="2">2-A</a>
+	<a href="#" data-id="5" data-parent="2">2-B</a>
+	<a href="#" data-id="6" data-parent="2">2-C</a>
+	<a href="#" data-id="7" data-parent="3">3-A</a>
+	<a href="#" data-id="8" data-parent="3">3-B</a>
+	<a href="#" data-id="9" data-parent="3">3-C</a>
+	<a href="#" data-id="10" data-parent="4">4-A</a>
+	<a href="#" data-id="11" data-parent="4">4-B</a>
+	<a href="#" data-id="12" data-parent="4">4-C</a>
+	<a href="#" data-id="13" data-parent="5">5-A</a>
+	<a href="#" data-id="14" data-parent="5">5-B</a>
+	<a href="#" data-id="15" data-parent="5">5-C</a>
+</div>
+
+<script type="text/javascript">
+$("#main").multiselect({mode:"child", child: $("#sub")});
+$("#main1").multiselect();
+$("#main2").multiselect();
+
+$("#btn_get").click(function(e) {
+    alert($("#sub").getselected().join(','));
+});
+
+$("#btn_set").click(function(e) {
+	$("#sub").setselected([3,4,7,9]);
+});
+
+$("#btn_get1").click(function(e) {
+    alert($("#main1").getselected().join(','));
+});
+
+$("#btn_set1").click(function(e) {
+	$("#main1").setselected([3,4]);
+});
+
+</script>
+
+</body>
+</html>
