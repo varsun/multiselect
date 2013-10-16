@@ -4,8 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Multiselect Plugin</title>
 <script type="text/javascript" src="js/jquery.1.10.2.min.js"></script>
-<script type="text/javascript" src="js/multiselect.1.0.js"></script>
-<link rel="stylesheet" type="text/css" href="css/multiselect.1.0.css" />
+<script type="text/javascript" src="js/multiselect.1.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/multiselect.1.0.min.css" />
 <style type="text/css">
 #btn_get, #btn_set, #btn_get1, #btn_set1 {
 	border:1px solid #b7b7b7;
@@ -27,7 +27,7 @@
 	<a href="#" data-id="4">4</a>
 	<a href="#" data-id="5">5</a>
 </div>
-
+<br />
 <div id="main1">
 	<a href="#" data-id="1">1</a>
 	<a href="#" data-id="2">2</a>
@@ -38,7 +38,7 @@
 
 <a href="#" id="btn_get1">Get</a>
 <a href="#" id="btn_set1">Set</a>
-
+<br />
 <div id="main">
 	<a href="#" data-id="1">1</a>
 	<a href="#" data-id="2">2</a>
@@ -46,10 +46,6 @@
 	<a href="#" data-id="4">4</a>
 	<a href="#" data-id="5">5</a>
 </div>
-
-<a href="#" id="btn_get">Get</a>
-<a href="#" id="btn_set">Set</a>
-
 <div id="sub">
 	<a href="#" data-id="1" data-parent="1">1-A</a>
 	<a href="#" data-id="2" data-parent="1">1-B</a>
@@ -67,6 +63,9 @@
 	<a href="#" data-id="14" data-parent="5">5-B</a>
 	<a href="#" data-id="15" data-parent="5">5-C</a>
 </div>
+
+<a href="#" id="btn_get">Get</a>
+<a href="#" id="btn_set">Set</a>
 
 <script type="text/javascript">
 $("#main").multiselect({mode:"child", child: $("#sub")});
